@@ -17,6 +17,8 @@ A Tampermonkey userscript that automatically displays IMDb and Rotten Tomatoes r
 ### Prerequisites
 - [Tampermonkey](https://www.tampermonkey.net/) browser extension installed
 - OMDb API key (free) - [Get one here](http://www.omdbapi.com/apikey.aspx)
+  - Note: The free tier has a limit of 1,000 requests per day
+  - Once the daily limit is reached, ratings won't display until the limit resets the next day
 
 ### Steps
 1. Install Tampermonkey for your browser:
@@ -36,6 +38,7 @@ A Tampermonkey userscript that automatically displays IMDb and Rotten Tomatoes r
 
 4. Configure your API key (two methods):
    - Method 1 (Recommended):
+     - Open Netflix
      - Click on the Tampermonkey icon in your browser
      - Find "Netflix IMDb & Rotten Tomatoes Ratings" in the menu
      - Click "Set OMDB API Key"
@@ -68,6 +71,13 @@ A Tampermonkey userscript that automatically displays IMDb and Rotten Tomatoes r
 - **DOM Observation**: MutationObserver detects dynamically loaded content
 - **Debouncing**: Scroll events are debounced for optimal performance
 - **Fallback Selectors**: Multiple title extraction methods for reliability
+
+### Limitations
+- **API Rate Limit**: The free OMDb API tier is limited to 1,000 requests per day
+  - Once this limit is reached, new ratings won't be displayed
+  - The limit resets at midnight UTC
+  - In-memory caching helps preserve API calls within a browsing session
+  - Consider your browsing habits when using the extension extensively
 
 ## 🎯 Use Cases
 
